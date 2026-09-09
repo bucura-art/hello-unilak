@@ -14,7 +14,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Hello UNILAK',
-  description: 'Find UNILAK classes, join campus events, follow announcements, and stay connected with the student community in one place.',
+  description: 'Find UNILAK classes easily, join campus events, follow announcements, and stay connected with the student community in one place.',
   openGraph: {
     title: 'Hello UNILAK',
     description: 'Find classes, join events, get announcements, and connect with the UNILAK students.',
