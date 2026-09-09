@@ -72,7 +72,7 @@ export default function FeedbackPage() {
               </svg>
             </div>
             <h2 className="text-2xl font-bold text-white mb-4">Feedback Received!</h2>
-            <p className="text-gray-400 mb-8">Thank you for helping us improve the MY UNILAK platform.</p>
+            <p className="text-gray-400 mb-8">Thank you for helping us improve this platform.</p>
             <Link
               href="/"
               className="block bg-blue-400 hover:bg-blue-400 text-white font-bold py-3 px-6 rounded-xl transition-colors w-full"

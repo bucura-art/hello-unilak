@@ -65,7 +65,7 @@ export default function AdvertToast() {
         </h3>
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-slate-200">
-            Meet singles in your area
+            Let&apos;s Meet in your area
           </span>
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-lg text-white transition hover:bg-white/20">
             →

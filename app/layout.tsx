@@ -15,23 +15,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://unilak-community.vercel.app'), // vercel production domain
+  metadataBase: new URL('https://hello-unilak.vercel.app'), // vercel production domain
   title: {
-    default: "MY UNILAK",
-    template: "%s | MY UNILAK"
+    default: "Hello UNILAK",
+    template: "%s | Hello UNILAK"
   },
-  description: "The community platform for UNILAK students to find classes, announcements, and engage in events.",
-  keywords: ["UNILAK kigali", "UNILAK courses", " UNILAK E-Learning online quiz", "UNILAK E-Learning all courses", "UNILAK online services", "UNILAK courses", "kigali campus life", "events in kigali", "events near me"],
+  description: "The community platform for UNILAK students to find classes, clubs, accommodation and engage in events.",
+  keywords: ["UNILAK kigali", "UNILAK courses", " UNILAK E-Learning online quiz", "UNILAK E-Learning all courses", "UNILAK online services", "UNILAK courses", "kigali campus life", "events in kigali", "Students housing in kigali", "UNILAK students community", "UNILAK students forum", "UNILAK students clubs", "UNILAK students events", "UNILAK students accommodation"],
   openGraph: {
-    title: "MY UNILAK",
+    title: "Hello UNILAK",
     description: "The community platform for UNILAK students.",
     type: "website",
     locale: "en_US",
-    siteName: "MY UNILAK",
+    siteName: "Hello UNILAK",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MY UNILAK",
+    title: "Hello UNILAK",
   },
 };
 
@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="apple-mobile-web-app-title" content="MY UNILAK" />
+        <meta name="apple-mobile-web-app-title" content="Hello UNILAK" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />

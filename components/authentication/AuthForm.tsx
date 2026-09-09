@@ -132,24 +132,24 @@ export default function AuthForm({ next }: { next: string }) {
       )}
       <form onSubmit={handleAuth} className="space-y-4">
         <div>
-          <label className="block text-lg font-bold text-white/80 uppercase mb-1">Registration Number</label>
+          <label className="block text-lg font-bold text-white uppercase mb-1">REG Number</label>
           <input
             type="text"
             value={regNumber}
             onChange={(e) => setRegNumber(e.target.value)}
             className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
-            placeholder="30505/2026"
             required
           />
         </div>
         <div>
-          <label className="block text-lg font-bold text-white/80 uppercase mb-1">Password</label>
+          <label className="block text-lg font-bold text-white uppercase mb-1">Password</label>
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors pr-10"
+              placeholder="M00dle!!"
               required
             />
             <button
@@ -195,11 +195,11 @@ export default function AuthForm({ next }: { next: string }) {
         </button>
 
         <div className="text-center mt-8 pt-4 border-t border-white/80">
-          <Link href="/" className="inline-flex items-center text-lg font-bold text-white/80 hover:text-white transition-colors group">
+          <Link href="/" className="inline-flex items-center text-lg font-bold text-white hover:text-white transition-colors group">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
-            Back Home
+            Back
           </Link>
         </div>
       </form>

@@ -11,17 +11,17 @@ export default function StickyHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-gradient-to-r from-gray-600 via-blue-500 to-gray-400 shadow-lg shadow-black/20 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="MY UNILAK home">
+        <Link href="/" className="flex items-center gap-3" aria-label="HELLO UNILAK home">
           <Image
             src="/community-icon.png"
-            alt="MY UNILAK"
+            alt="HELLO UNILAK"
             width={44}
             height={44}
             className="h-11 w-11 rounded-full object-cover ring-2 ring-white/10"
             priority
           />
           <span className="text-sm font-extrabold uppercase tracking-wide text-white sm:text-base">
-            MY UNILAK
+            HELLO UNILAK
           </span>
         </Link>
 

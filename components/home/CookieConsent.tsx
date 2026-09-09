@@ -31,7 +31,7 @@ export default function CookieConsent() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-gray-300 text-sm leading-relaxed max-w-3xl">
           <p>
-            We use cookies to improve your experience on MY UNILAK. By continuing to browse, you agree to our use of cookies.
+            We use cookies to improve your experience on this platform. By continuing to browse, you agree to our use of cookies.
             For more information, please read our <Link href="/privacy" className="text-blue-400 hover:text-blue-300 underline">Privacy Policy</Link>.
           </p>
         </div>

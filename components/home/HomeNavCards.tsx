@@ -4,6 +4,7 @@ import Image from 'next/image';
 const navigationCards = [
   { href: '/find-classes', title: 'Find Classes', imageSrc: '/images/find-classes.png' },
   { href: '/find-events', title: 'Find Events', imageSrc: '/images/find-events.png' },
+  { href: '/find-housing', title: 'Find Housing', imageSrc: '/images/find-housing.png' },
   { href: '/announcements', title: 'Find Updates', imageSrc: '/images/announcements.png' },
   { href: '/faq', title: 'Find Q&A', imageSrc: '/images/faq.png' },
 ];

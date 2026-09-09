@@ -13,10 +13,10 @@ import AdvertSection from '@/components/home/AdvertSection';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'MY UNILAK',
+  title: 'Hello UNILAK',
   description: 'Find UNILAK classes, join campus events, follow announcements, and stay connected with the student community in one place.',
   openGraph: {
-    title: 'MY UNILAK',
+    title: 'Hello UNILAK',
     description: 'Find classes, join events, get announcements, and connect with the UNILAK students.',
     type: 'website',
   },

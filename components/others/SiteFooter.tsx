@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Left Side: Branding */}
         <div className="hidden max-w-sm flex-col space-y-4 sm:flex">
           <h2 className="text-3xl font-extrabold tracking-tight text-white">
-            MY UNILAK
+            Hello UNILAK
           </h2>
           <p className="text-white text-lg font-bold leading-relaxed">
             Find classes, stay informed, and connect with the campus community.
