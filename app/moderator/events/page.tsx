@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { createClient } from '@/utils/supabase/client';
 import { Database } from '@/lib/database.types';
-import EventModal from '@/components/moderator/EventModal';
+import CreateEventForm from '@/components/moderator/CreateEventForm';
 import EventDetailsModal from '@/components/students/events/EventDetailsModal';
 
 type EventRow = Database['public']['Tables']['events_table']['Row'];
@@ -86,7 +86,7 @@ export default function ModeratorEventsPage() {
 
   return (
     <div className="min-h-screen bg-[#535350] p-6 text-white">
-      {toast && <div className="fixed right-6 top-6 z-[60] rounded-lg bg-gray-900 px-5 py-3 font-semibold shadow-xl">{toast}</div>}
+      {toast && <div className="fixed right-6 top-6 z-60 rounded-lg bg-gray-900 px-5 py-3 font-semibold shadow-xl">{toast}</div>}
       <div className="mx-auto max-w-7xl">
         <header className="mb-8 flex flex-col gap-4 rounded-xl bg-gray-900 p-4 shadow-lg sm:flex-row sm:items-center sm:justify-between md:p-6">
           <div><h1 className="text-2xl font-bold tracking-wider">EVENTS</h1><p className="mt-1 text-sm text-gray-400">Manage upcoming and finished campus events.</p></div>
@@ -118,7 +118,7 @@ export default function ModeratorEventsPage() {
           </article>)}
         </div>}
       </div>
-      {modalEvent !== undefined && <EventModal event={modalEvent} onClose={() => setModalEvent(undefined)} onSave={saveEvent} />}
+      {modalEvent !== undefined && <CreateEventForm event={modalEvent} onClose={() => setModalEvent(undefined)} onSave={saveEvent} />}
       {detailsEvent && <EventDetailsModal event={{ title: detailsEvent.title, startDate: detailsEvent.start_date, endDate: detailsEvent.end_date, duration: detailsEvent.duration, venue: detailsEvent.venue, venueValue: detailsEvent.venue_value, interestCount: detailsEvent.interest_count }} onClose={() => setDetailsEvent(null)} />}
     </div>
   );

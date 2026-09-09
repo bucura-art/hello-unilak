@@ -40,17 +40,17 @@ create or replace function handle_new_user()
 returns trigger as $$
 declare
   assigned_role text;
-  next_num int;
+  username_value text;
   default_avatar text;
 begin
   assigned_role := coalesce(new.raw_user_meta_data->>'role', 'student');
-  next_num := nextval('public.user_username_seq');
+  username_value := coalesce(trim(new.raw_user_meta_data->>'username'), split_part(new.email, '@', 1));
   default_avatar := public.get_random_emoji();
 
   insert into public.profiles_table (id, username, role, avatar_url)
   values (
     new.id,
-    assigned_role || '_' || next_num,
+    username_value,
     assigned_role,
     default_avatar
   );

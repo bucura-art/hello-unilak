@@ -70,6 +70,50 @@ WITH CHECK (
 	)
 );
 
+DROP POLICY IF EXISTS "Users can create their own events" ON public.events_table;
+CREATE POLICY "Users can create their own events"
+ON public.events_table FOR INSERT
+WITH CHECK (
+	created_by = auth.uid()
+	OR EXISTS (
+		SELECT 1 FROM public.profiles_table
+		WHERE profiles_table.id = auth.uid()
+		AND profiles_table.role = 'moderator'
+	)
+);
+
+DROP POLICY IF EXISTS "Users can update their own events" ON public.events_table;
+CREATE POLICY "Users can update their own events"
+ON public.events_table FOR UPDATE
+USING (
+	created_by = auth.uid()
+	OR EXISTS (
+		SELECT 1 FROM public.profiles_table
+		WHERE profiles_table.id = auth.uid()
+		AND profiles_table.role = 'moderator'
+	)
+)
+WITH CHECK (
+	created_by = auth.uid()
+	OR EXISTS (
+		SELECT 1 FROM public.profiles_table
+		WHERE profiles_table.id = auth.uid()
+		AND profiles_table.role = 'moderator'
+	)
+);
+
+DROP POLICY IF EXISTS "Users can delete their own events" ON public.events_table;
+CREATE POLICY "Users can delete their own events"
+ON public.events_table FOR DELETE
+USING (
+	created_by = auth.uid()
+	OR EXISTS (
+		SELECT 1 FROM public.profiles_table
+		WHERE profiles_table.id = auth.uid()
+		AND profiles_table.role = 'moderator'
+	)
+);
+
 DROP POLICY IF EXISTS "Users can express interest in events" ON public.event_interests_table;
 CREATE POLICY "Anyone can express interest in events"
 ON public.event_interests_table FOR INSERT
@@ -111,43 +155,58 @@ CREATE POLICY "Public can view event flyers"
 ON storage.objects FOR SELECT
 USING (bucket_id = 'event-flyers');
 
-CREATE POLICY "Moderators can upload event flyers"
+DROP POLICY IF EXISTS "Users can upload event flyers" ON storage.objects;
+CREATE POLICY "Users can upload event flyers"
 ON storage.objects FOR INSERT
 WITH CHECK (
 	 bucket_id = 'event-flyers'
-	 AND EXISTS (
-		 SELECT 1 FROM public.profiles_table
-		 WHERE profiles_table.id = auth.uid()
-		 AND profiles_table.role = 'moderator'
+	 AND (
+		 split_part(name, '/', 1) = auth.uid()::text
+		 OR EXISTS (
+			 SELECT 1 FROM public.profiles_table
+			 WHERE profiles_table.id = auth.uid()
+			 AND profiles_table.role = 'moderator'
+		 )
 	 )
 );
 
-CREATE POLICY "Moderators can update event flyers"
+DROP POLICY IF EXISTS "Users can update event flyers" ON storage.objects;
+CREATE POLICY "Users can update event flyers"
 ON storage.objects FOR UPDATE
 USING (
 	 bucket_id = 'event-flyers'
-	 AND EXISTS (
-		 SELECT 1 FROM public.profiles_table
-		 WHERE profiles_table.id = auth.uid()
-		 AND profiles_table.role = 'moderator'
+	 AND (
+		 split_part(name, '/', 1) = auth.uid()::text
+		 OR EXISTS (
+			 SELECT 1 FROM public.profiles_table
+			 WHERE profiles_table.id = auth.uid()
+			 AND profiles_table.role = 'moderator'
+		 )
 	 )
 )
 WITH CHECK (
 	 bucket_id = 'event-flyers'
-	 AND EXISTS (
-		 SELECT 1 FROM public.profiles_table
-		 WHERE profiles_table.id = auth.uid()
-		 AND profiles_table.role = 'moderator'
+	 AND (
+		 split_part(name, '/', 1) = auth.uid()::text
+		 OR EXISTS (
+			 SELECT 1 FROM public.profiles_table
+			 WHERE profiles_table.id = auth.uid()
+			 AND profiles_table.role = 'moderator'
+		 )
 	 )
 );
 
-CREATE POLICY "Moderators can delete event flyers"
+DROP POLICY IF EXISTS "Users can delete event flyers" ON storage.objects;
+CREATE POLICY "Users can delete event flyers"
 ON storage.objects FOR DELETE
 USING (
 	 bucket_id = 'event-flyers'
-	 AND EXISTS (
-		 SELECT 1 FROM public.profiles_table
-		 WHERE profiles_table.id = auth.uid()
-		 AND profiles_table.role = 'moderator'
+	 AND (
+		 split_part(name, '/', 1) = auth.uid()::text
+		 OR EXISTS (
+			 SELECT 1 FROM public.profiles_table
+			 WHERE profiles_table.id = auth.uid()
+			 AND profiles_table.role = 'moderator'
+		 )
 	 )
 );

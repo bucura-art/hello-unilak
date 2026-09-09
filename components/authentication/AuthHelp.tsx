@@ -16,7 +16,7 @@ export default function AuthHelp() {
             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-blue-400 font-bold text-sm">1</div>
             <div>
               <h3 className="text-white font-bold text-2xl mb-1">Create Account</h3>
-              <p className="text-lg text-white/80 leading-relaxed">If you are new here, use your email to create account</p>
+              <p className="text-lg text-white/80 leading-relaxed">If you are new here, use your registration number to create account</p>
             </div>
           </div>
 

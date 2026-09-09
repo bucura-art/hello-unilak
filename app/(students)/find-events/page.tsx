@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AdvertToast from '@/components/others/AdvertToast';
 import AdvertSection from '@/components/home/AdvertSection';
 import EventFeed from './EventFeed';
@@ -50,6 +51,14 @@ export default async function JoinEventsPage() {
           <AdvertSection />
         </div>
       </div>
+
+      <Link
+        href="/find-events/create"
+        aria-label="Create a new event"
+        className="fixed bottom-24 left-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-rose-600 text-3xl font-bold text-white shadow-lg transition hover:scale-105 hover:bg-rose-500 focus:outline-none focus:ring-4 focus:ring-rose-300"
+      >
+        +
+      </Link>
 
       <AdvertToast />
     </div>

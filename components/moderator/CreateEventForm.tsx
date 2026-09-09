@@ -16,7 +16,7 @@ type EventForm = {
   venueValue: string;
 };
 
-interface EventModalProps {
+interface CreateEventFormProps {
   event?: EventRow | null;
   onClose: () => void;
   onSave: (form: EventForm, flyer: File | null) => Promise<void>;
@@ -24,7 +24,7 @@ interface EventModalProps {
 
 const categories = ['Academic', 'prayer', 'Sports', 'Clubs', 'Social', 'Career', 'Other'];
 
-export default function EventModal({ event, onClose, onSave }: EventModalProps) {
+export default function CreateEventForm({ event, onClose, onSave }: CreateEventFormProps) {
   const [form, setForm] = useState<EventForm>({
     title: event?.title || '',
     category: event?.category || 'Academic',
