@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import AdvertToast from '@/components/others/AdvertToast';
+//import AdvertToast from '@/components/others/AdvertToast';
 import AdvertSection from '@/components/home/AdvertSection';
 import EventFeed from './EventFeed';
 import { createClient } from '@/lib/supabaseServer';
@@ -59,7 +59,7 @@ export default async function JoinEventsPage() {
         +
       </Link>
 
-      <AdvertToast />
+      {/* <AdvertToast /> */}
     </div>
   );
 }
